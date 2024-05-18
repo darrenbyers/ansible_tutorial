@@ -1,3 +1,8 @@
+[web_servers]
 192.168.2.156
+
+[db_servers]
 192.168.2.45
+
+[file_servers]
 192.168.2.15

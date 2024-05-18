@@ -4,16 +4,12 @@
   become: true
   tasks:
 
-  - name: update respository index
-    yum: 
+  - name: install apache2 and php packages
+    package:
+      name: 
+        - "{{ apache_package }}"
+        - "{{ php_package }}"
+      state: latest
       update_cache: yes
+    when: ansible_distribution == "RedHat"
 
-  - name: install apache2 package
-    yum:
-      name: httpd
-      state: latest
-
-  - name: add php support for apache
-    yum:
-      name: php
-      state: latest
